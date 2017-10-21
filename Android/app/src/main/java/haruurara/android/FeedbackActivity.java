@@ -32,7 +32,7 @@ public class FeedbackActivity extends AppCompatActivity {
         }
         feedbackView.setText(feedbackText);
         Button Feedback_ok_button = (Button)findViewById(R.id.Feedback_ok_button);
-        Feedback_ok_button.setText(Integer.toString(user_num));
+        //Feedback_ok_button.setText(Integer.toString(user_num));
         Feedback_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
