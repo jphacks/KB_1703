@@ -4,14 +4,47 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class TimeRegisterActivity extends AppCompatActivity {
+
+    private Spinner spinner;
+    // 選択肢
+    private String spinnerItems[] = {" 1:00", " 5:00", "10:00", "15:00"};
+    private TextView textView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_register);
+
+        //spinner
+        textView = (TextView)findViewById(R.id.TimeRegister_spinner_textView);
+        spinner = (Spinner)findViewById(R.id.TimeRegister_spinner);
+        // ArrayAdapter
+        ArrayAdapter<String> adapter
+                = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerItems);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        // spinner に adapter をセット
+        spinner.setAdapter(adapter);
+        // リスナーを登録
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            //　アイテムが選択された時
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Spinner spinner = (Spinner) parent;
+                String item = (String) spinner.getSelectedItem();
+                textView.setText(item);
+            }
+            //　アイテムが選択されなかった
+            public void onNothingSelected(AdapterView<?> parent) {
+                //
+            }
+        });
 
         Button TimeRegister_ok_button = (Button)findViewById(R.id.TimeRegister_ok_button);
         TimeRegister_ok_button.setOnClickListener(new View.OnClickListener() {
@@ -24,7 +57,7 @@ public class TimeRegisterActivity extends AppCompatActivity {
             }
         });
 
-        Button TimeRegister_back_button = (Button)findViewById(R.id.TimeRegister_back_button);
+        Button TimeRegister_back_button = (Button)findViewById(R.id.BrainStorm_back_button);
         TimeRegister_back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
