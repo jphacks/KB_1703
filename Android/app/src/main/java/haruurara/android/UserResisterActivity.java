@@ -5,11 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class UserResisterActivity extends AppCompatActivity {
 
     Globals globals;
+    private int userNum = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,14 @@ public class UserResisterActivity extends AppCompatActivity {
 
         globals = (Globals)this.getApplication();
         globals.time = 4;
+
+        Button userAddButton = (Button)findViewById(R.id.userAddButton);
+        userAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ユーザー追加
+            }
+        });
 
         Button UserResister_ok_button = (Button)findViewById(R.id.UserResister_ok_button);
         UserResister_ok_button.setText(Integer.toString(globals.time));
