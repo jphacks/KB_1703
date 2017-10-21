@@ -9,6 +9,12 @@ import android.app.Application;
 public class Globals extends Application {
 
     User users[];
-    int time;
+    int time;//分
+
+    //誰か生き残りのカウントの実装をお願いします！！！！！！
+    public int CountAliveUser(){
+        int cnt = 3;
+        return cnt;
+    }
 
 }
