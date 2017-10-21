@@ -18,7 +18,7 @@
         </activity>
         <activity
             android:name=".UserResisterActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".TimeRegisterActivity" />
         <activity android:name=".BrainStormActivity" />
         <activity android:name=".VoteActivity" />
@@ -27,7 +27,8 @@
         <activity android:name=".ConfirmActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".RoundStartActivity" />
-        <activity android:name=".UserAddActivity"></activity>
+        <activity android:name=".UserAddActivity" />
+        <activity android:name=".UserUpdateActivity"></activity>
     </application>
 
 </manifest>
