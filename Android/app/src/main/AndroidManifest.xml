@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserResisterActivity" />
+        <activity android:name=".UserResisterActivity"
+                  android:windowSoftInputMode="adjustPan" >
+        </activity>
         <activity android:name=".TimeRegisterActivity" />
         <activity android:name=".BrainStormActivity" />
         <activity android:name=".VoteActivity" />
