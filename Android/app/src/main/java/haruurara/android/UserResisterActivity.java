@@ -23,6 +23,7 @@ public class UserResisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resister);
 
+
         globals = (Globals)this.getApplication();
 
         listView = (ListView) findViewById(R.id.listView);
@@ -37,7 +38,7 @@ public class UserResisterActivity extends AppCompatActivity {
             }
         });
 
-        Button userAddButton = (Button)findViewById(R.id.userAddButton);
+        Button userAddButton = (Button)findViewById(R.id.UserRegister_addUser_button);
         userAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -22,8 +22,8 @@ public class ConfirmActivity extends AppCompatActivity {
         Intent intent = getIntent();
         user_num = intent.getIntExtra("user_num", 0);
 
-        TextView  textView = (TextView)findViewById(R.id.confirm_text_view);
-        textView.setText(globals.users.get(user_num).name + "さん、フィードバックを見る心の準備はできましたか？");
+        TextView  textView = (TextView)findViewById(R.id.Confirm_userName_textView);
+        textView.setText(globals.users.get(user_num).name + "さんですか？");
 
         Button Confirm_ok_button = (Button)findViewById(R.id.Confirm_ok_button);
         Confirm_ok_button.setOnClickListener(new View.OnClickListener() {

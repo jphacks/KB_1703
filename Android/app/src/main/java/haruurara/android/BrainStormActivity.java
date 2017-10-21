@@ -40,7 +40,7 @@ public class BrainStormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_brain_storm);
         globals = (Globals)this.getApplication();
         int BrainTime = globals.time * globals.CountAliveUser();
-        mTimerText = (TextView) findViewById(R.id.timer_text);
+        mTimerText = (TextView) findViewById(R.id.BrainStorm_tclockRegister_textView);
         //mTimerText.setText("3:00");
         mTimer = new MyCountDownTimer(BrainTime * 60 * 1000, 100);
         mTimer.start();

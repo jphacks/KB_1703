@@ -4,28 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1.0"
+    android:background="#000000"
     tools:context="haruurara.android.ConfirmActivity">
 
-    <Button
-        android:id="@+id/Confirm_ok_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="はい"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="55dp" />
 
-    <TextView
-        android:id="@+id/confirm_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+    <LinearLayout
+        android:id="@+id/Confirm_layout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        android:orientation="vertical"
+        android:weightSum="1.0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.184" />
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1">
+
+        <LinearLayout
+            android:id="@+id/Confirm_userName_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="1dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@+id/Confirm_ok_layout"
+            app:layout_constraintRight_toRightOf="@+id/Confirm_UserImage_layout"
+            app:layout_constraintTop_toTopOf="@+id/Confirm_layout"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1">
+
+            <TextView
+                android:id="@+id/Confirm_userName_textView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#000000"
+                android:gravity="center"
+                android:text="xxさんですか？"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Confirm_userImage_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/Confirm_userName_imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/noimage" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Confirm_ok_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:layout_weight="0.2"
+            android:background="#000000"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1.0"
+            app:layout_constraintBottom_toBottomOf="@+id/Confirm_userName_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/Confirm_layout"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1">
+
+            <Button
+                android:id="@+id/Confirm_ok_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:background="#9013FE"
+                android:text="OK"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="155dp"
+                tools:layout_editor_absoluteY="188dp" />
+        </LinearLayout>
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>

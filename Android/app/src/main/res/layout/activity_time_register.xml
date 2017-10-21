@@ -4,42 +4,124 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context="haruurara.android.TimeRegisterActivity">
 
-    <Button
-        android:id="@+id/TimeRegister_ok_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="49dp"
-        android:layout_marginTop="25dp"
-        android:text="決定"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <Button
-        android:id="@+id/TimeRegister_back_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="25dp"
-        android:text="戻る"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_constraintLeft_creator="1"
-        tools:layout_constraintTop_creator="1" />
-
-    <Spinner
-        android:id="@+id/time_spinner"
+    <LinearLayout
+        android:id="@+id/TimeRegister_layout"
         android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:entries="@array/time_spinner_array"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="551dp"
+        android:orientation="vertical"
+        android:weightSum="1.0"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="242dp" />
+        tools:layout_editor_absoluteY="8dp">
+
+        <LinearLayout
+            android:id="@+id/TimeRegister_title_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/TImeRegister_title_imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/timeregistertitle" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/TimeRegister_main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:orientation="horizontal"
+            android:weightSum="1.0">
+
+            <LinearLayout
+                android:id="@+id/TimeRegister_register_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.4"
+                android:orientation="vertical"
+                android:weightSum="1.0">
+
+                <TextView
+                    android:id="@+id/TimeRegister_spinner_textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="100dp"
+                    android:layout_weight="0.5"
+                    android:background="#000000"
+                    android:elevation="24dp"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#ffffff"
+                    android:textSize="80sp" />
+
+                <Spinner
+                    android:id="@+id/TimeRegister_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_weight="0.5"
+                    android:background="#9B9B9B"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/TimeRegister_button_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:orientation="horizontal"
+            android:weightSum="1.0">
+
+            <Button
+                android:id="@+id/TimeRegister_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="0.4"
+                android:background="#f5A623"
+                android:gravity="center"
+                android:text="BACK"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintTop_creator="1" />
+
+            <Button
+                android:id="@+id/TimeRegister_ok_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="16dp"
+                android:layout_weight="0.4"
+                android:background="#f5A623"
+                android:gravity="center"
+                android:text="OK"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                app:layout_constraintLeft_toRightOf="@+id/BrainStorm_back_button"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_constraintLeft_creator="1"
+                tools:layout_constraintTop_creator="1" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
