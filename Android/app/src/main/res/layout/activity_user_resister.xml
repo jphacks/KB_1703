@@ -72,7 +72,7 @@
         app:layout_constraintTop_toTopOf="@+id/userAddButton" />
 
     <EditText
-        android:id="@+id/edittext3"
+        android:id="@+id/edittext"
         android:layout_width="0dp"
         android:layout_height="49dp"
         android:text="ユーザー1"
@@ -87,7 +87,7 @@
         app:layout_constraintLeft_toLeftOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edittext2"
         android:layout_width="0dp"
         android:layout_height="49dp"
         android:layout_marginEnd="67dp"
@@ -102,7 +102,7 @@
         tools:layout_constraintTop_creator="1" />
 
     <EditText
-        android:id="@+id/edittext"
+        android:id="@+id/edittext3"
         android:layout_width="0dp"
         android:layout_height="49dp"
         android:layout_marginEnd="67dp"
