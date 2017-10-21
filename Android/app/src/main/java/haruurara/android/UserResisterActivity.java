@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class UserResisterActivity extends AppCompatActivity {
@@ -17,10 +19,11 @@ public class UserResisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resister);
-        TextView textView = (TextView) findViewById(R.id.textview);
 
         globals = (Globals)this.getApplication();
         globals.time = 4;
+
+        ListView listView = (ListView) findViewById(R.id.listView);
 
         Button userAddButton = (Button)findViewById(R.id.userAddButton);
         userAddButton.setOnClickListener(new View.OnClickListener() {
