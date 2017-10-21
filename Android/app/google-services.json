@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "237382771896",
+    "firebase_url": "https://kb1703-b0058.firebaseio.com",
+    "project_id": "kb1703-b0058"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:237382771896:android:ed982777155b402d",
+        "android_client_info": {
+          "package_name": "haruurara.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "237382771896-ht9plbrvt68473glf3e7sgeg0qaoga4b.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "haruurara.android",
+            "certificate_hash": "6e287b08d40e523a7c5e2830a66ca6ea6a904361"
+          }
+        },
+        {
+          "client_id": "237382771896-42lk2km2a21kmcsslsrbludbjtfc2bad.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtT4FNqiORwZCsRkkDUzxL2p3Y8bBcJf0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "237382771896-42lk2km2a21kmcsslsrbludbjtfc2bad.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
