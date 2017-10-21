@@ -47,7 +47,7 @@ public class VoteAdapter extends ArrayAdapter<User>{
                 voteActivity.vote(position);
             }
         });
-        if (position == user_num){
+        if (position == user_num || !item.is_alive){
             textView.setVisibility(View.GONE);
             button.setVisibility(View.GONE);
         }
