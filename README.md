@@ -1,9 +1,9 @@
-# サンプル（プロダクト名）
+# Brain Booster
 
 [![Product Name](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/channel/UC4PtjOfZTbVp9DwtJv82Lzg)
 
 ## 製品概要
-### X Tech（X → 今回皆さんが選定した好きな言葉に書き換えてください）
+### Idea x Tech
 
 ### 背景（製品開発のきっかけ、課題等）
 ここに
@@ -17,6 +17,7 @@
 ### 特長
 
 #### 1. 特長1
+- 
 
 #### 2. 特長2
 
@@ -34,23 +35,23 @@
 #### API・データ
 今回スポンサーから提供されたAPI、製品などの外部技術があれば記述をして下さい。
 
-* 
-* 
-* 
+* NTTレゾナント 形態素解析API
+* Firebase
+*
 
 #### フレームワーク・ライブラリ・モジュール
-* 
-* 
+* Express
+* Bulma
 
 #### デバイス
-* 
-* 
+* Android
+*
 
 ### 研究内容・事前開発プロダクト（任意）
 ご自身やチームの研究内容や、事前に持ち込みをしたプロダクトがある場合は、こちらに実績なども含め記載をして下さい。
 
-* 
-* 
+*
+*
 
 
 ### 独自開発技術（Hack Dayで開発したもの）
