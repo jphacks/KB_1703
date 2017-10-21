@@ -1,10 +1,11 @@
 package haruurara.android;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ConfirmActivity extends AppCompatActivity {
@@ -24,6 +25,9 @@ public class ConfirmActivity extends AppCompatActivity {
 
         TextView  textView = (TextView)findViewById(R.id.Confirm_userName_textView);
         textView.setText(globals.users.get(user_num).name + "さんですか？");
+
+        ImageView imageView = (ImageView) findViewById(R.id.Confirm_userName_imageView);
+        imageView.setImageBitmap(globals.users.get(user_num).my_image);
 
         Button Confirm_ok_button = (Button)findViewById(R.id.Confirm_ok_button);
         Confirm_ok_button.setOnClickListener(new View.OnClickListener() {
