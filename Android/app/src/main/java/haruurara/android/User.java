@@ -17,12 +17,12 @@ public class User {
         is_alive = true;
     }
 
-    public void addFeedback(){
-
+    public void addFeedback(String feedback){
+        feedbacks.add(feedback);
     }
 
     public void clearFeedbacks(){
-
+        feedbacks.clear();
     }
 
 
