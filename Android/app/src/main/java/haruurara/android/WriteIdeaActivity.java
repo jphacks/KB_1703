@@ -51,55 +51,43 @@ public class WriteIdeaActivity extends AppCompatActivity {
                     @Override
                     public void run() {
 
-
-        //                入力されたideaを取得
+                        // 入力されたideaを取得
                         String idea = ideaEditText.getText().toString();
 
-        //                postするjsonstringを作成
+                        // postするjsonstringを作成
                         String jsonString = "{\"app_id\":\"0a38399a4eaad5cce88db74833bd1d69fb7019649fa43f4d3bdfaa9da3df1267\",\"sentence\":\"" + idea + "\",\"info_filter\":\"form\",\"pos_filter\":\"名詞\"}";
 
-        //                post
+                        // post
                         String url = "https://labs.goo.ne.jp/api/morph";
                         OkHttpClient client = new OkHttpClient();
                         MediaType MIMEType= MediaType.parse("application/json; charset=utf-8");
                         RequestBody requestBody = RequestBody.create (MIMEType, jsonString);
                         Request request = new Request.Builder().url(url).post(requestBody).build();
                         try {
-        //                    一旦responseの中身を確認したい
-                            Log.d("ian", "ian");
+                            // 一旦responseの中身を確認したい
                             Response response = client.newCall(request).execute();
                             String responseString = response.body().string();
-                            Log.d("aaaaaaa", responseString);
 
                             try {
-                             //jsonを扱えるようにする
-                                Log.d("jsonarray", responseString);
+                                // jsonを扱えるようにする
                                 JSONObject jsonObject = new JSONObject(responseString);
                                 JSONArray jsonArray = jsonObject.getJSONArray("word_list");
-                                Log.d("ian", jsonArray.getJSONArray(0).toString());
 
-                            // firebaseになげる ここまでできたら教えて！
+                                // set firebase
                                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                                 Date now = new Date(System.currentTimeMillis());
                                 DateFormat formatter = new SimpleDateFormat("yyyyMMdd_HHmm");
                                 String nowText = formatter.format(now);
 
+                                // get data
                                 ArrayList<String> list1 = new ArrayList<String>();
-
                                 for(int i = 0; i < jsonArray.length(); i++){
                                     JSONArray ja = jsonArray.getJSONArray(i);
-                                    Log.d("ian-ian", "bbb");
                                     for(int j = 0; j < ja.length(); j++){
-                                        Log.d("ian-ian", "aaa");
                                         list1.add(ja.getJSONArray(j).get(0).toString());
                                     }
                                 }
-
-                                for(int l = 0; l < list1.size(); l++){
-                                    Log.d("ian-check", list1.get(l));
-                                }
-
-                                Set<String> set = new HashSet<>(list);
+                                Set<String> set = new HashSet<>(list1);
                                 List<String> list2 = new ArrayList<>(set);
 
                                 StringBuilder builder = new StringBuilder();
@@ -108,25 +96,27 @@ public class WriteIdeaActivity extends AppCompatActivity {
                                 }
                                 String keyword = builder.substring(0, builder.length() - 1);
 
+                                // send data to firebase
                                 for(int i = 0; i < list2.size(); i++){
-                                    database.getReference("/keywords/" + list2.get(i) + "/" + nowText + "/context").setValue("Hello, World!");
+                                    database.getReference("/keywords/" + list2.get(i) + "/" + nowText + "/context").setValue(idea);
                                     database.getReference("/keywords/" + list2.get(i) + "/" + nowText + "/keyword").setValue(keyword);
                                 }
-                                database.getReference("/ideas/" + nowText + "/context").setValue("Hello, World!");
+                                database.getReference("/ideas/" + nowText + "/context").setValue(idea);
                                 database.getReference("/ideas/" + nowText + "/keyword").setValue(keyword);
 
                             } catch (JSONException e) {
                                 e.printStackTrace();
-                            }
 
+                            }
                         } catch (IOException e) {
                             e.printStackTrace();
+                        } finally {
+                            Intent intent = new Intent();
+                            intent.setClassName("haruurara.android", "haruurara.android.StartActivity");
+                            startActivity(intent);
+                            WriteIdeaActivity.this.finish();
                         }
 
-                        Intent intent = new Intent();
-                        intent.setClassName("haruurara.android", "haruurara.android.StartActivity");
-                        startActivity(intent);
-                        WriteIdeaActivity.this.finish();
 
                     }
                 }).start();
