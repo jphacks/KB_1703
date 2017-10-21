@@ -27,8 +27,10 @@
         <activity android:name=".ConfirmActivity" />
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".RoundStartActivity" />
-        <activity android:name=".UserAddActivity" />
+        <activity android:name=".WriteIdeaActivity"></activity>
+        <activity android:name=".UserAddActivity"></activity>
         <activity android:name=".UserUpdateActivity"></activity>
     </application>
 
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 </manifest>

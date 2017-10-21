@@ -13,7 +13,6 @@ public class FinishActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_finish);
 
-
         Button Finish_ok_button = (Button)findViewById(R.id.Finish_ok_button);
         Finish_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override

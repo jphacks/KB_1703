@@ -37,7 +37,7 @@ public class FeedbackActivity extends AppCompatActivity {
                     FeedbackActivity.this.finish();
                 } else {
                     Intent intent = new Intent();
-                    intent.setClassName("haruurara.android", "haruurara.android.StartActivity");
+                    intent.setClassName("haruurara.android", "haruurara.android.WriteIdeaActivity");
                     startActivity(intent);
                     FeedbackActivity.this.finish();
                 }
