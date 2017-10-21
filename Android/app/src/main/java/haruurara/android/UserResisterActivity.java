@@ -8,12 +8,18 @@ import android.widget.Button;
 
 public class UserResisterActivity extends AppCompatActivity {
 
+    Globals globals;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resister);
 
+        globals = (Globals)this.getApplication();
+        globals.time = 4;
+
         Button UserResister_ok_button = (Button)findViewById(R.id.UserResister_ok_button);
+        UserResister_ok_button.setText(Integer.toString(globals.time));
         UserResister_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
