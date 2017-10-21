@@ -1,6 +1,7 @@
 package haruurara.android;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,6 +30,8 @@ public class UserResisterActivity extends AppCompatActivity {
                 UserResisterActivity.this.finish();
             }
         });
+
+        System.out.println(globals.CountAliveUser());
 
         Button UserResister_back_button = (Button)findViewById(R.id.UserResister_back_button);
         UserResister_back_button.setOnClickListener(new View.OnClickListener() {
