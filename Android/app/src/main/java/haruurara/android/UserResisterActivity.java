@@ -31,8 +31,6 @@ public class UserResisterActivity extends AppCompatActivity {
             }
         });
 
-        System.out.println(globals.CountAliveUser());
-
         Button UserResister_back_button = (Button)findViewById(R.id.UserResister_back_button);
         UserResister_back_button.setOnClickListener(new View.OnClickListener() {
             @Override
