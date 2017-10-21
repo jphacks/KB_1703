@@ -8,6 +8,6 @@
 /captures
 .externalNativeBuild
 /Server/node_modules
-/Servernpm-debug.log
-/Server.DS_Store
+/Server/npm-debug.log
+/Server/.DS_Store
 /Server/*.env
