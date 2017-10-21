@@ -24,5 +24,6 @@ public class StartActivity extends AppCompatActivity {
                 StartActivity.this.finish();
             }
         });
+
     }
 }

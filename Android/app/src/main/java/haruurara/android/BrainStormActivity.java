@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 public class BrainStormActivity extends AppCompatActivity {
 
+    Globals globals;
     TextView mTimerText;
     MyCountDownTimer mTimer;
 
     public class MyCountDownTimer extends CountDownTimer {
-        public boolean isRunning = false;
 
         public MyCountDownTimer(long millisInFuture, long countDownInterval){
             super(millisInFuture, countDownInterval);
@@ -30,10 +30,6 @@ public class BrainStormActivity extends AppCompatActivity {
         @Override
         public void onFinish() {
             mTimerText.setText("0:00");
-            Intent intent = new Intent();
-            intent.setClassName("haruurara.android", "haruurara.android.VoteActivity");
-            startActivity(intent);
-            BrainStormActivity.this.finish();
         }
     }
 
@@ -42,18 +38,27 @@ public class BrainStormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brain_storm);
+        globals = (Globals)this.getApplication();
+        int BrainTime = globals.time * globals.CountAliveUser();
         mTimerText = (TextView) findViewById(R.id.timer_text);
-        mTimerText.setText("1:00");
-        mTimer = new MyCountDownTimer(1 * 60 * 1000, 100);
-        mTimer.isRunning = true;
+        //mTimerText.setText("3:00");
+        mTimer = new MyCountDownTimer(BrainTime * 60 * 1000, 100);
         mTimer.start();
 
         Button BrainStorm_ok_button = (Button)findViewById(R.id.BrainStorm_ok_button);
         BrainStorm_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int first_alive_user_num = 0;
+                for(int i = 0; i < globals.users.size(); i++){
+                    if(globals.users.get(i).is_alive){
+                        first_alive_user_num = i;
+                        break;
+                    }
+                }
                 Intent intent = new Intent();
                 intent.setClassName("haruurara.android", "haruurara.android.VoteActivity");
+                intent.putExtra("user_num", first_alive_user_num);
                 startActivity(intent);
                 BrainStormActivity.this.finish();
             }
