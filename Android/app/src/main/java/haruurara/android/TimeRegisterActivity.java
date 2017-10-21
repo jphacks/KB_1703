@@ -39,9 +39,9 @@ public class TimeRegisterActivity extends AppCompatActivity {
             //　アイテムが選択された時
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Spinner spinner = (Spinner) parent;
-                int item = (int) spinner.getSelectedItem();
+                int item = Integer.parseInt((String)spinner.getSelectedItem());
                 textView.setText(Integer.toString(item));
-                globals.time = Integer.parseInt(item);
+                globals.time = item;
             }
             //　アイテムが選択されなかった
             public void onNothingSelected(AdapterView<?> parent) {

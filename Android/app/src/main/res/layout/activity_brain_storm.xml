@@ -9,8 +9,8 @@
 
     <LinearLayout
         android:id="@+id/BrainSrotm_layout"
-        android:layout_width="395dp"
-        android:layout_height="643dp"
+        android:layout_width="368dp"
+        android:layout_height="551dp"
         android:orientation="vertical"
         android:weightSum="1.0"
         tools:layout_editor_absoluteX="8dp"

@@ -23,6 +23,7 @@ public class UserResisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resister);
 
+
         globals = (Globals)this.getApplication();
 
         listView = (ListView) findViewById(R.id.listView);
