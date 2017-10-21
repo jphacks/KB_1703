@@ -30,10 +30,6 @@ public class BrainStormActivity extends AppCompatActivity {
         @Override
         public void onFinish() {
             mTimerText.setText("0:00");
-            Intent intent = new Intent();
-            intent.setClassName("haruurara.android", "haruurara.android.VoteActivity");
-            startActivity(intent);
-            BrainStormActivity.this.finish();
         }
     }
 
