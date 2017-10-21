@@ -15,6 +15,7 @@ public class User {
     public User(String name){
         this.name = name;
         is_alive = true;
+        feedbacks = new ArrayList<String>();
     }
 
     public void addFeedback(String feedback){
