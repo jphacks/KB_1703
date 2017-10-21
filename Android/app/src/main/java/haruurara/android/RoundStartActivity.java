@@ -15,18 +15,13 @@ public class RoundStartActivity extends AppCompatActivity {
     TextView mTimerText;
     ListView mListView;
 
-    private static final String[] foods = {"りんご","みかん","バナナ","イチジク"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round_start);
         globals = (Globals)this.getApplication();
 
-        globals.users.add(new User("木村"));
-        globals.users.add(new User("木村"));
-        globals.users.add(new User("木村"));
-        globals.users.add(new User("木村"));
+
 
         int BrainTime = globals.time * globals.CountAliveUser();
         mTimerText = (TextView) findViewById(R.id.timer_text);
@@ -36,7 +31,6 @@ public class RoundStartActivity extends AppCompatActivity {
         Log.d("木村",Integer.toString(globals.CountAliveUser()));
         mListView = (ListView) findViewById(R.id.list_view);
         CustomAdapter arrayAdapter = new CustomAdapter(this,R.layout.user_list,globals.users);
-        //ArrayAdapter<User> arrayAdapter = new ArrayAdapter<User>(this,android.R.layout.simple_list_item_1,globals.users);
         mListView.setAdapter(arrayAdapter);
 
 
