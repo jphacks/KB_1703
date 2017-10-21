@@ -21,18 +21,14 @@ public class RoundStartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_round_start);
         globals = (Globals)this.getApplication();
 
-
-
         int BrainTime = globals.time * globals.CountAliveUser();
         mTimerText = (TextView) findViewById(R.id.timer_text);
         mTimerText.setText(String.valueOf(BrainTime) + ":00");
 
-
         Log.d("木村",Integer.toString(globals.CountAliveUser()));
         mListView = (ListView) findViewById(R.id.list_view);
-        CustomAdapter arrayAdapter = new CustomAdapter(this,R.layout.user_list,globals.users);
+        CustomAdapter arrayAdapter = new CustomAdapter(this, R.layout.picture_list, globals.users);
         mListView.setAdapter(arrayAdapter);
-
 
         Button round_start_button = (Button) findViewById(R.id.round_start_button);
         round_start_button.setOnClickListener(new View.OnClickListener() {

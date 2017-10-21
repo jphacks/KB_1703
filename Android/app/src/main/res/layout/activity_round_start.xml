@@ -4,22 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000"
     tools:context="haruurara.android.RoundStartActivity"
-    tools:layout_editor_absoluteY="81dp"
-    tools:layout_editor_absoluteX="0dp">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
 
     <Button
         android:id="@+id/round_start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="スタート"
-        tools:layout_constraintRight_creator="1"
-        tools:layout_constraintBottom_creator="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_constraintLeft_creator="1"
         android:layout_marginBottom="16dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        android:text="スタート"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1" />
 
     <TextView
         android:id="@+id/timer_text"
@@ -27,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#fff"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/round_start_button"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -39,7 +41,7 @@
     <ListView
         android:id="@+id/list_view"
         android:layout_width="300dp"
-        android:layout_height="200dp"
+        android:layout_height="400dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
