@@ -28,7 +28,6 @@ public class UserAdapter extends ArrayAdapter<User> {
     public View getView(final int position, View convertView, final ViewGroup parent){
         User item = (User)getItem(position);
 
-
         if(null == convertView){
             convertView = layoutInflater.inflate(R.layout.picture_list, null);
         }
@@ -37,8 +36,6 @@ public class UserAdapter extends ArrayAdapter<User> {
         textView.setTextColor(Color.WHITE);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.picture);
         imageView.setImageBitmap(item.my_image);
-
-
 
         return convertView;
     }
