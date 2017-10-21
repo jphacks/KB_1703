@@ -1,10 +1,11 @@
 package haruurara.android;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class FeedbackActivity extends AppCompatActivity {
 
@@ -20,7 +21,16 @@ public class FeedbackActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         user_num = intent.getIntExtra("user_num", 0);
-
+        TextView feedbackView = (TextView) findViewById(R.id.feedback_view);
+        String feedbackText = "";
+        for(int i = 0; i < globals.users.get(user_num).feedbacks.size();i++){
+            feedbackText += globals.users.get(user_num).feedbacks.get(i);
+            feedbackText += "\n";
+        }
+        if(feedbackText == ""){
+            feedbackText = "フィードバック無し！すごい！！";
+        }
+        feedbackView.setText(feedbackText);
         Button Feedback_ok_button = (Button)findViewById(R.id.Feedback_ok_button);
         Feedback_ok_button.setText(Integer.toString(user_num));
         Feedback_ok_button.setOnClickListener(new View.OnClickListener() {

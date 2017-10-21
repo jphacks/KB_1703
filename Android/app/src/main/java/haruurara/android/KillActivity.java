@@ -24,6 +24,14 @@ public class KillActivity extends AppCompatActivity {
         TextView killedText = (TextView) findViewById(R.id.killed_view);
         killedText.setText((globals.users.get(index).name + "は無残にも殺されました"));
         globals.users.get(index).is_alive = false;
+        /*
+        for(int i = 0;i < globals.users.size();i++){
+            for(int j = 0; j < globals.users.get(i).feedbacks.size();j++){
+                Log.d(globals.users.get(i).feedbacks.get(j), "フィードバック一覧");
+            }
+        }
+        */
+
 
         Button Kill_ok_button = (Button)findViewById(R.id.Kill_ok_button);
         Kill_ok_button.setOnClickListener(new View.OnClickListener() {
