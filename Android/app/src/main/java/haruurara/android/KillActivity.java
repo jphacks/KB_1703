@@ -16,9 +16,8 @@ public class KillActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kill);
 
-        //Intent intent = getIntent();
-        //int index = intent.getIntExtra("killed_", 0);
-        int index = 1;
+        Intent intent = getIntent();
+        int index = intent.getIntExtra("kill_user_num", 0);
 
         globals = (Globals)this.getApplication();
 

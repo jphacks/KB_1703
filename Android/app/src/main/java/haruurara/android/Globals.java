@@ -11,6 +11,7 @@ public class Globals extends Application {
 
     ArrayList<User> users = new ArrayList<User>();
     int time;//分
+    int votes[];
 
     public int CountAliveUser(){
         int cnt = 0;
