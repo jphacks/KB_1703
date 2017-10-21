@@ -29,7 +29,7 @@ public class TimeRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.UserResisterActivity");
+                intent.setClassName("haruurara.android", "haruurara.android.UserRegisterActivity");
                 startActivity(intent);
                 TimeRegisterActivity.this.finish();
             }

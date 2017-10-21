@@ -18,7 +18,7 @@ public class BrainStormActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.VoteActivity");
+                intent.setClassName("haruurara.android", "haruurara.android.TimeUpActivity");
                 startActivity(intent);
                 BrainStormActivity.this.finish();
             }

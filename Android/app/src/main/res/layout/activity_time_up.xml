@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context="haruurara.android.TImeUpActivity">
 
+    <Button
+        android:id="@+id/TimeUp_ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        tools:layout_constraintTop_creator="1"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="156dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

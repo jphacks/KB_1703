@@ -10,7 +10,7 @@
         android:id="@+id/Confirm_ok_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
+        android:text="cOK"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="55dp" />
 </android.support.constraint.ConstraintLayout>
