@@ -49,8 +49,16 @@ public class BrainStormActivity extends AppCompatActivity {
         BrainStorm_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int first_alive_user_num = 0;
+                for(int i = 0; i < globals.users.size(); i++){
+                    if(globals.users.get(i).is_alive){
+                        first_alive_user_num = i;
+                        break;
+                    }
+                }
                 Intent intent = new Intent();
                 intent.setClassName("haruurara.android", "haruurara.android.VoteActivity");
+                intent.putExtra("user_num", first_alive_user_num);
                 startActivity(intent);
                 BrainStormActivity.this.finish();
             }

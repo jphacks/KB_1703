@@ -22,15 +22,17 @@ public class RoundStartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_round_start);
         globals = (Globals)this.getApplication();
+
+        globals.users.add(new User("木村"));
+        globals.users.add(new User("木村"));
+        globals.users.add(new User("木村"));
+        globals.users.add(new User("木村"));
+
         int BrainTime = globals.time * globals.CountAliveUser();
         mTimerText = (TextView) findViewById(R.id.timer_text);
         mTimerText.setText(String.valueOf(BrainTime) + ":00");
 
 
-        globals.users.add(new User("木村"));
-        globals.users.add(new User("木村"));
-        globals.users.add(new User("木村"));
-        globals.users.add(new User("木村"));
         Log.d("木村",Integer.toString(globals.CountAliveUser()));
         mListView = (ListView) findViewById(R.id.list_view);
         CustomAdapter arrayAdapter = new CustomAdapter(this,R.layout.user_list,globals.users);
