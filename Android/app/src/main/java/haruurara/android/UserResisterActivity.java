@@ -1,6 +1,7 @@
 package haruurara.android;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -8,7 +9,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -52,10 +52,18 @@ public class UserResisterActivity extends AppCompatActivity {
         UserResister_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.TimeRegisterActivity");
-                startActivity(intent);
-                UserResisterActivity.this.finish();
+                if(globals.users.size() >= 3) {
+                    Intent intent = new Intent();
+                    intent.setClassName("haruurara.android", "haruurara.android.TimeRegisterActivity");
+                    startActivity(intent);
+                    UserResisterActivity.this.finish();
+                }else{
+                    new AlertDialog.Builder(UserResisterActivity.this)
+                            .setTitle("すまん。進めへんわ。。。")
+                            .setMessage("ユーザを3人以上作成してください。")
+                            .setPositiveButton("OK", null)
+                            .show();
+                }
             }
         });
 
