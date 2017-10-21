@@ -1,0 +1,46 @@
+/* style */
+
+body {
+    padding: 0px 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+.footer {
+    padding: 3rem 1.5rem 3rem;
+    background-color: #fff;
+}
+
+.container {
+    padding: 50px 0 0;
+    min-height: calc(100vh - 272px);
+}
+
+.direction-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.scroll {
+    height: calc(100vh - 308px);
+    overflow: scroll;
+}
+
+.columns:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.column {
+    flex-basis: unset;
+}
+
+.description {
+    padding: 0 24px;
+}
+
+.about {
+    padding-top: calc((100vh - 562px) / 2);
+}
