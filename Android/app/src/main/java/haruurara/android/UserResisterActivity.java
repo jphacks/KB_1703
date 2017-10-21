@@ -3,7 +3,6 @@ package haruurara.android;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -57,7 +56,6 @@ public class UserResisterActivity extends AppCompatActivity {
                 for (int i = 0; i < list.size(); i++) {
                     String name = list.get(i).getText().toString();
                     globals.users.add(new User(name));
-                    Log.d(name, "hira");
                 }
                 Intent intent = new Intent();
                 intent.setClassName("haruurara.android", "haruurara.android.TimeRegisterActivity");
