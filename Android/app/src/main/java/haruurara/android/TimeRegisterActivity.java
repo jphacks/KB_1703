@@ -14,15 +14,17 @@ public class TimeRegisterActivity extends AppCompatActivity {
 
     private Spinner spinner;
     // 選択肢
-    private String spinnerItems[] = {" 1:00", " 5:00", "10:00", "15:00"};
+    private String spinnerItems[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
     private TextView textView;
 
+    Globals globals;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_register);
 
+        globals = (Globals)this.getApplication();
         //spinner
         textView = (TextView)findViewById(R.id.TimeRegister_spinner_textView);
         spinner = (Spinner)findViewById(R.id.TimeRegister_spinner);
@@ -37,8 +39,9 @@ public class TimeRegisterActivity extends AppCompatActivity {
             //　アイテムが選択された時
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Spinner spinner = (Spinner) parent;
-                String item = (String) spinner.getSelectedItem();
-                textView.setText(item);
+                int item = (int) spinner.getSelectedItem();
+                textView.setText(Integer.toString(item));
+                globals.time = Integer.parseInt(item);
             }
             //　アイテムが選択されなかった
             public void onNothingSelected(AdapterView<?> parent) {
@@ -51,13 +54,13 @@ public class TimeRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.BrainStormActivity");
+                intent.setClassName("haruurara.android", "haruurara.android.RoundStartActivity");
                 startActivity(intent);
                 TimeRegisterActivity.this.finish();
             }
         });
 
-        Button TimeRegister_back_button = (Button)findViewById(R.id.BrainStorm_back_button);
+        Button TimeRegister_back_button = (Button)findViewById(R.id.TimeRegister_back_button);
         TimeRegister_back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,7 +70,6 @@ public class TimeRegisterActivity extends AppCompatActivity {
                 TimeRegisterActivity.this.finish();
             }
         });
-
 
     }
 }

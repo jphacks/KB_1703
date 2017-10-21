@@ -3,15 +3,49 @@ package haruurara.android;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class UserResisterActivity extends AppCompatActivity {
+
+    Globals globals;
+    ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resister);
+
+        globals = (Globals)this.getApplication();
+
+        listView = (ListView) findViewById(R.id.listView);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent();
+                intent.setClassName("haruurara.android", "haruurara.android.UserUpdateActivity");
+                intent.putExtra("userNum", position);
+                Log.d("position", String.valueOf(position));
+                startActivity(intent);
+            }
+        });
+
+        Button userAddButton = (Button)findViewById(R.id.UserRegister_addUser_button);
+        userAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClassName("haruurara.android", "haruurara.android.UserAddActivity");
+                startActivity(intent);
+            }
+        });
 
         Button UserResister_ok_button = (Button)findViewById(R.id.UserResister_ok_button);
         UserResister_ok_button.setOnClickListener(new View.OnClickListener() {
@@ -24,16 +58,19 @@ public class UserResisterActivity extends AppCompatActivity {
             }
         });
 
-        Button UserResister_back_button = (Button)findViewById(R.id.BrainStorm_back_button);
-        UserResister_back_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.StartActivity");
-                startActivity(intent);
-                UserResisterActivity.this.finish();
-            }
-        });
+    }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        renewUsers();
+    }
+
+    public void renewUsers(){
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        for(int i = 0; i < globals.users.size(); i++){
+            adapter.add(globals.users.get(i).name);
+        }
+        listView.setAdapter(adapter);
     }
 }

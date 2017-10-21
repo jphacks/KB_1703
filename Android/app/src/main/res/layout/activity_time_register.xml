@@ -86,7 +86,7 @@
             android:weightSum="1.0">
 
             <Button
-                android:id="@+id/BrainStorm_back_button"
+                android:id="@+id/TimeRegister_back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
