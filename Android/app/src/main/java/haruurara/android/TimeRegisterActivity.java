@@ -18,6 +18,10 @@ public class TimeRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_time_register);
 
         globals = (Globals)this.getApplication();
+        globals.users.add(new User("木村"));
+        globals.users.add(new User("ブライソン"));
+        globals.users.add(new User("西澤"));
+        globals.users.add(new User("平"));
 
         Button TimeRegister_ok_button = (Button)findViewById(R.id.TimeRegister_ok_button);
         TimeRegister_ok_button.setOnClickListener(new View.OnClickListener() {
