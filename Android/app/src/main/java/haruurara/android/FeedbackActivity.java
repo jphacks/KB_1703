@@ -26,6 +26,7 @@ public class FeedbackActivity extends AppCompatActivity {
         Feedback_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                globals.users.get(user_num).is_alive = true;
                 globals.users.get(user_num).clearFeedbacks();
                 user_num++;
                 if(user_num < globals.users.size()) {

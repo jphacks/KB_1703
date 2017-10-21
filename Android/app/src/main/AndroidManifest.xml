@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".UserResisterActivity" />
+        <activity
+            android:name=".UserResisterActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".TimeRegisterActivity" />
         <activity android:name=".BrainStormActivity" />
         <activity android:name=".VoteActivity" />
@@ -26,6 +28,7 @@
         <activity android:name=".FeedbackActivity" />
         <activity android:name=".RoundStartActivity" />
         <activity android:name=".WriteIdeaActivity"></activity>
+        <activity android:name=".UserAddActivity"></activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>

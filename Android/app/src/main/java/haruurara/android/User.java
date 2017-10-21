@@ -15,14 +15,15 @@ public class User {
     public User(String name){
         this.name = name;
         is_alive = true;
+        feedbacks = new ArrayList<String>();
     }
 
-    public void addFeedback(){
-
+    public void addFeedback(String feedback){
+        feedbacks.add(feedback);
     }
 
     public void clearFeedbacks(){
-
+        feedbacks.clear();
     }
 
 
