@@ -19,7 +19,7 @@ public class StartActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.WriteIdeaActivity");
+                intent.setClassName("haruurara.android", "haruurara.android.UserResisterActivity");
                 startActivity(intent);
                 StartActivity.this.finish();
             }
