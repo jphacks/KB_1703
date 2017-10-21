@@ -15,7 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".UserResisterActivity" />
+        <activity android:name=".TimeRegisterActivity" />
+        <activity android:name=".BrainStormActivity" />
+        <activity android:name=".VoteActivity" />
+        <activity android:name=".KillActivity" />
+        <activity android:name=".FinishActivity" />
+        <activity android:name=".TImeUpActivity" />
+        <activity android:name=".ConfirmActivity" />
+        <activity android:name=".FeedbackActivity"></activity>
     </application>
 
 </manifest>
