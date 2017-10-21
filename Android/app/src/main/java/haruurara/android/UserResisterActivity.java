@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class UserResisterActivity extends AppCompatActivity {
 
@@ -12,6 +13,7 @@ public class UserResisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_resister);
+        TextView textView = (TextView) findViewById(R.id.textview);
 
         Button UserResister_ok_button = (Button)findViewById(R.id.UserResister_ok_button);
         UserResister_ok_button.setOnClickListener(new View.OnClickListener() {
