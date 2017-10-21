@@ -1,14 +1,11 @@
 package haruurara.android;
 
 import android.content.Intent;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -16,9 +13,6 @@ import java.util.ArrayList;
 public class UserResisterActivity extends AppCompatActivity {
 
     Globals globals;
-    private int userNum = 1;
-    ArrayList<EditText> list = new ArrayList<>();
-    ListViewAdapter listViewAdapter = new ListViewAdapter(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,31 +20,36 @@ public class UserResisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_resister);
 
         globals = (Globals)this.getApplication();
-        globals.time = 4;
 
         ListView listView = (ListView) findViewById(R.id.listView);
-//        ArrayList<EditText> list = new ArrayList<>();
-//        ListViewAdapter listViewAdapter = new ListViewAdapter(this);
-
-        listViewAdapter.setEditTextList(list);
+        final ArrayList<EditText> list = new ArrayList<>();
+        list.add(new EditText(this));
+        list.add(new EditText(this));
+        list.add(new EditText(this));
+        final ListViewAdapter listViewAdapter = new ListViewAdapter(this, R.layout.edittextrow, list);
         listView.setAdapter(listViewAdapter);
-
 
         Button userAddButton = (Button)findViewById(R.id.userAddButton);
         userAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // ユーザー追加
-
-                EditText editText = new EditText(UserResisterActivity.this);
-
-                list.add(editText);
+                list.add(new EditText(UserResisterActivity.this));
                 listViewAdapter.notifyDataSetChanged();
             }
         });
 
+        Button userDeleteButton = (Button)findViewById(R.id.userDeleteButton);
+        userDeleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(list.size() > 0) {
+                    list.remove(list.remove(list.size() - 1));
+                    listViewAdapter.notifyDataSetChanged();
+                }
+            }
+        });
+
         Button UserResister_ok_button = (Button)findViewById(R.id.UserResister_ok_button);
-        UserResister_ok_button.setText(Integer.toString(globals.time));
         UserResister_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

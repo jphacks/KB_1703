@@ -1,53 +1,39 @@
 package haruurara.android;
 
-/**
- * Created by hiro on 2017/10/21.
- */
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 
-import java.util.ArrayList;
+import java.util.List;
 
-public class ListViewAdapter extends BaseAdapter {
-    Context context;
-    LayoutInflater layoutInflater = null;
-    ArrayList<EditText> editTextList;
+/**
+ * Created by kentakimura on 2017/10/21.
+ */
 
-    public ListViewAdapter(Context context) {
-        this.context = context;
-        this.layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
+public class ListViewAdapter extends ArrayAdapter<EditText> {
+    private LayoutInflater layoutInflater_;
 
-    public void setEditTextList(ArrayList<EditText> editTextList) {
-        this.editTextList = editTextList;
-    }
-
-    @Override
-    public int getCount() {
-        return editTextList.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return editTextList.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return editTextList.get(position).getId();
+    public ListViewAdapter(Context context, int editTextResourceId, List<EditText> objects) {
+        super(context, editTextResourceId, objects);
+        layoutInflater_ = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.edittextrow, null);
+        // 特定の行(position)のデータを得る
+        EditText item = (EditText)getItem(position);
+
+        // convertViewは使い回しされている可能性があるのでnullの時だけ新しく作る
+        if (null == convertView) {
+            convertView = layoutInflater_.inflate(R.layout.edittextrow, null);
         }
-        convertView = layoutInflater.inflate(R.layout.edittextrow,parent,false);
+
+        // CustomDataのデータをViewの各Widgetにセットする
+        EditText editText;
+        editText = (EditText) convertView.findViewById(R.id.editText);
 
         return convertView;
     }
