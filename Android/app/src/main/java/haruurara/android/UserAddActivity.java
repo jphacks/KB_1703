@@ -3,6 +3,7 @@ package haruurara.android;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -45,7 +46,7 @@ public class UserAddActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(new_user_name.length() > 0){
-                    globals.users.add(new User(new_user_name.getText().toString()));
+                    globals.users.add(new User(new_user_name.getText().toString(), ((BitmapDrawable)imageView.getDrawable()).getBitmap()));
                     UserAddActivity.this.finish();
                 }
             }

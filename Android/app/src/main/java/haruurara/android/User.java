@@ -1,5 +1,7 @@
 package haruurara.android;
 
+import android.graphics.Bitmap;
+
 import java.util.ArrayList;
 
 /**
@@ -11,10 +13,12 @@ public class User {
     public String name;
     public boolean is_alive;
     public ArrayList<String> feedbacks;
+    public Bitmap my_image;
 
-    public User(String name){
+    public User(String name, Bitmap bitmap){
         this.name = name;
         is_alive = true;
+        my_image = bitmap;
         feedbacks = new ArrayList<String>();
     }
 
