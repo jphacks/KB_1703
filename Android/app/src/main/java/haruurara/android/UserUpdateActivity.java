@@ -52,9 +52,7 @@ public class UserUpdateActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // update
                 globals.users.get(userNum).name = name.getText().toString();
-                Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.UserResisterActivity");
-                startActivity(intent);
+                UserUpdateActivity.this.finish();
             }
         });
 
@@ -64,9 +62,7 @@ public class UserUpdateActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // delete
                 globals.users.remove(userNum);
-                Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.UserResisterActivity");
-                startActivity(intent);
+                UserUpdateActivity.this.finish();
             }
         });
     }
