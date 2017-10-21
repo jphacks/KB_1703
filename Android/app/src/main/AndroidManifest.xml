@@ -21,7 +21,8 @@
             android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".TimeRegisterActivity" />
         <activity android:name=".BrainStormActivity" />
-        <activity android:name=".VoteActivity" />
+        <activity android:name=".VoteActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".KillActivity" />
         <activity android:name=".FinishActivity" />
         <activity android:name=".ConfirmActivity" />
