@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 public class BrainStormActivity extends AppCompatActivity {
 
+    Globals globals;
     TextView mTimerText;
     MyCountDownTimer mTimer;
 
     public class MyCountDownTimer extends CountDownTimer {
-        public boolean isRunning = false;
 
         public MyCountDownTimer(long millisInFuture, long countDownInterval){
             super(millisInFuture, countDownInterval);
@@ -42,10 +42,11 @@ public class BrainStormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brain_storm);
+        globals = (Globals)this.getApplication();
+        int BrainTime = globals.time * globals.CountAliveUser();
         mTimerText = (TextView) findViewById(R.id.timer_text);
-        mTimerText.setText("1:00");
-        mTimer = new MyCountDownTimer(1 * 60 * 1000, 100);
-        mTimer.isRunning = true;
+        //mTimerText.setText("3:00");
+        mTimer = new MyCountDownTimer(BrainTime * 60 * 1000, 100);
         mTimer.start();
 
         Button BrainStorm_ok_button = (Button)findViewById(R.id.BrainStorm_ok_button);
