@@ -18,7 +18,7 @@ public class TimeRegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClassName("haruurara.android", "haruurara.android.BrainStormActivity");
+                intent.setClassName("haruurara.android", "haruurara.android.RoundStartActivity");
                 startActivity(intent);
                 TimeRegisterActivity.this.finish();
             }
