@@ -98,10 +98,10 @@ public class WriteIdeaActivity extends AppCompatActivity {
 
                                 // send data to firebase
                                 for(int i = 0; i < list2.size(); i++){
-                                    database.getReference("/keywords/" + list2.get(i) + "/" + nowText + "/context").setValue(idea);
+                                    database.getReference("/keywords/" + list2.get(i) + "/" + nowText + "/content").setValue(idea);
                                     database.getReference("/keywords/" + list2.get(i) + "/" + nowText + "/keyword").setValue(keyword);
                                 }
-                                database.getReference("/ideas/" + nowText + "/context").setValue(idea);
+                                database.getReference("/ideas/" + nowText + "/content").setValue(idea);
                                 database.getReference("/ideas/" + nowText + "/keyword").setValue(keyword);
 
                             } catch (JSONException e) {
