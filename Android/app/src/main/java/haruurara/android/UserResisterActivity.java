@@ -1,17 +1,13 @@
 package haruurara.android;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-
-import java.util.ArrayList;
 
 public class UserResisterActivity extends AppCompatActivity {
 
@@ -68,10 +64,11 @@ public class UserResisterActivity extends AppCompatActivity {
     }
 
     public void renewUsers(){
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        /*ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
         for(int i = 0; i < globals.users.size(); i++){
             adapter.add(globals.users.get(i).name);
-        }
+        }*/
+        UserAdapter adapter = new UserAdapter(this,R.layout.picture_list,globals.users);
         listView.setAdapter(adapter);
     }
 }
