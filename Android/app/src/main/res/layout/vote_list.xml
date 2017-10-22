@@ -44,7 +44,8 @@
             android:background="@android:color/background_light"
             android:elevation="24dp"
             android:gravity="top|left"
-            android:hint="投票した理由"
+            android:hint="投票した理由を70文字以内で記入してください"
+            android:maxLength="70"
             android:inputType="text|textMultiLine"
             android:textColor="@android:color/black" />
 
