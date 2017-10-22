@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 public class VoteActivity extends AppCompatActivity {
 
@@ -29,6 +30,9 @@ public class VoteActivity extends AppCompatActivity {
         Intent intent = getIntent();
         user_num = intent.getIntExtra("user_num", 0);
         vote_num = -1;
+
+        TextView textView = (TextView)findViewById(R.id.vote_text_view);
+        textView.setText(globals.users.get(user_num).name + "さんの投票の番です");
 
         listView = (ListView)findViewById(R.id.vote_list_view);
         VoteAdapter voteAdapter = new VoteAdapter(this, R.layout.vote_list, globals.users, user_num);
