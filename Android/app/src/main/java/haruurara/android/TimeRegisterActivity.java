@@ -10,12 +10,13 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import static android.R.id.list;
+
 public class TimeRegisterActivity extends AppCompatActivity {
 
     private Spinner spinner;
     // 選択肢
-    private String spinnerItems[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
-    private TextView textView;
+    private String list[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
 
     Globals globals;
 
@@ -26,11 +27,11 @@ public class TimeRegisterActivity extends AppCompatActivity {
 
         globals = (Globals)this.getApplication();
         //spinner
-        textView = (TextView)findViewById(R.id.TimeRegister_spinner_textView);
         spinner = (Spinner)findViewById(R.id.TimeRegister_spinner);
         // ArrayAdapter
-        ArrayAdapter<String> adapter
-                = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, spinnerItems);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, list);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // spinner に adapter をセット
         spinner.setAdapter(adapter);
@@ -40,7 +41,6 @@ public class TimeRegisterActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Spinner spinner = (Spinner) parent;
                 int item = Integer.parseInt((String)spinner.getSelectedItem());
-                textView.setText(Integer.toString(item));
                 globals.time = item;
             }
             //　アイテムが選択されなかった
