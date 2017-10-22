@@ -1,10 +1,12 @@
 package haruurara.android;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class KillActivity extends AppCompatActivity {
@@ -23,7 +25,11 @@ public class KillActivity extends AppCompatActivity {
 
         TextView killedText = (TextView) findViewById(R.id.killed_view);
         killedText.setText((globals.users.get(index).name + "は無残にも殺されました"));
+        killedText.setTextColor(Color.WHITE);
         globals.users.get(index).is_alive = false;
+
+        ImageView killedImageView = (ImageView) findViewById(R.id.userImageView);
+        killedImageView.setImageBitmap(globals.users.get(index).my_image);
         /*
         for(int i = 0;i < globals.users.size();i++){
             for(int j = 0; j < globals.users.get(i).feedbacks.size();j++){
