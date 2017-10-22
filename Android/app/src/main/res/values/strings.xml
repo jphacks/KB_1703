@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">spinnerItems</string>
-
+    <string name="app_name">Brain Boost</string>
     <string-array name="spinner_list">
         <item>1</item>
         <item>2</item>
@@ -13,5 +12,4 @@
         <item>9</item>
         <item>10</item>
     </string-array>
-
 </resources>
