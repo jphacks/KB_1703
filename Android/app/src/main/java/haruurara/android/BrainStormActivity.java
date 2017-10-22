@@ -65,7 +65,7 @@ public class BrainStormActivity extends AppCompatActivity {
             }
         });
 
-        Button BrainStorm_back_button = (Button)findViewById(R.id.BrainStorm_back_button);
+        Button BrainStorm_back_button = (Button)findViewById(R.id.UserAdd_back_button);
         BrainStorm_back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

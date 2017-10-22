@@ -28,7 +28,7 @@ public class UserAddActivity extends AppCompatActivity {
 
         globals = (Globals)this.getApplication();
 
-        imageView = (ImageView)findViewById(R.id.new_user_image);
+        imageView = (ImageView)findViewById(R.id.UserAdd_userImage_imageView);
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,16 +39,18 @@ public class UserAddActivity extends AppCompatActivity {
             }
         });
 
-        final EditText new_user_name = (EditText) findViewById(R.id.new_user_name);
+        final EditText new_user_name = (EditText) findViewById(R.id.UserAdd_userName_editText);
 
-        Button new_user_button = (Button)findViewById(R.id.new_user_button);
-        new_user_button.setOnClickListener(new View.OnClickListener() {
+
+
+        Button UserAdd_back_button = (Button)findViewById(R.id.UserAdd_back_button);
+        UserAdd_back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(new_user_name.length() > 0){
-                    globals.users.add(new User(new_user_name.getText().toString(), ((BitmapDrawable)imageView.getDrawable()).getBitmap()));
-                    UserAddActivity.this.finish();
-                }
+                Intent intent = new Intent();
+                intent.setClassName("haruurara.android", "haruurara.android.UserRegisterActivity");
+                startActivity(intent);
+                UserAddActivity.this.finish();
             }
         });
     }
