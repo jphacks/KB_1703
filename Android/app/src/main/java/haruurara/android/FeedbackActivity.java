@@ -24,15 +24,16 @@ public class FeedbackActivity extends AppCompatActivity {
         TextView feedbackView = (TextView) findViewById(R.id.feedback_view);
         String feedbackText = "";
         for(int i = 0; i < globals.users.get(user_num).feedbacks.size();i++){
+            feedbackText += "・";
             feedbackText += globals.users.get(user_num).feedbacks.get(i);
-            feedbackText += "\n";
+            feedbackText += "\n\n";
         }
         if(feedbackText == ""){
             feedbackText = "フィードバック無し！すごい！！";
         }
         feedbackView.setText(feedbackText);
         Button Feedback_ok_button = (Button)findViewById(R.id.Feedback_ok_button);
-        //Feedback_ok_button.setText(Integer.toString(user_num));
+
         Feedback_ok_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
