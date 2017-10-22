@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brain Booster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="./favicon.ico">
+</head>
+<body>
+
+    <!-- navnar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="./brainboost.png" alt="Brain Boost" width="162px" height="45px">
+            </a>
+            <a class="navbar-item is-active" href="/">Home</a>
+        </div>
+    </nav>
+
+    <!-- container -->
+    <div class="container columns direction-column">
+        <div id="stream" class="column is-8 is-offset-2 scroll">
+        </div>
+        <div class="column is-8 is-offset-2">
+            <input id="keyword" class="input is-info" type="text" onkeydown="searchKeyword();">
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p><strong>Brain Boost</strong> by haruurara.</p>
+            <p><a class="icon" href="https://github.com/jphacks/KB_1703"><i class="fa fa-github"></i></a></p>
+        </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBoFBWwgxqvKyPte5taVaba3NUEpqp8xKA",
+            authDomain: "kb1703-b0058.firebaseapp.com",
+            databaseURL: "https://kb1703-b0058.firebaseio.com",
+            projectId: "kb1703-b0058",
+            storageBucket: "",
+            messagingSenderId: "237382771896"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="./main.js"></script>
+
+</body>
+</html>
