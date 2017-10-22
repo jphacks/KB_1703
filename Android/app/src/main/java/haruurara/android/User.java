@@ -2,6 +2,7 @@ package haruurara.android;
 
 import android.graphics.Bitmap;
 
+import java.sql.Blob;
 import java.util.ArrayList;
 
 /**
