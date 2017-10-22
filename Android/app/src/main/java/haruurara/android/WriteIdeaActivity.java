@@ -124,5 +124,16 @@ public class WriteIdeaActivity extends AppCompatActivity {
         });
 
 
+        Button no_send_idea_finish_button = (Button)findViewById(R.id.noSendIdeaFinishButton);
+        no_send_idea_finish_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClassName("haruurara.android", "haruurara.android.StartActivity");
+                startActivity(intent);
+                WriteIdeaActivity.this.finish();
+            }
+        });
+
     }
 }
