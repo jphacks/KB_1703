@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/vote_name"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="7"
             android:gravity="center_vertical"
@@ -24,8 +24,7 @@
         <Button
             android:id="@+id/vote_button"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
+            android:layout_height="wrap_content"
             android:text="投票する" />
     </LinearLayout>
 
@@ -39,19 +38,21 @@
 
         <EditText
             android:id="@+id/feedback_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
             android:layout_weight="7"
+            android:background="@android:color/background_light"
             android:elevation="24dp"
+            android:gravity="top|left"
+            android:hint="投票した理由"
             android:inputType="text|textMultiLine"
-            android:textColor="#fff" />
+            android:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/feedback_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
-            android:text="OK" />
+            android:text="送信" />
 
     </LinearLayout>
 
