@@ -4,12 +4,13 @@ import android.graphics.Bitmap;
 
 import java.util.ArrayList;
 
+import io.realm.RealmObject;
+
 /**
  * Created by ian on 2017/10/21.
  */
 
-public class User {
-
+public class User extends RealmObject {
     public String name;
     public boolean is_alive;
     public ArrayList<String> feedbacks;
@@ -29,6 +30,7 @@ public class User {
     public void clearFeedbacks(){
         feedbacks.clear();
     }
+
 
 
 }

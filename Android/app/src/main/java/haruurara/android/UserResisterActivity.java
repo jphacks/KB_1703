@@ -10,10 +10,13 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
+import io.realm.Realm;
+
 public class UserResisterActivity extends AppCompatActivity {
 
     Globals globals;
     ListView listView;
+    Realm mRealm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,12 +67,20 @@ public class UserResisterActivity extends AppCompatActivity {
             }
         });
 
+        mRealm = Realm.getDefaultInstance();
+
     }
 
     @Override
     protected void onResume(){
         super.onResume();
         renewUsers();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mRealm.close();
     }
 
     public void renewUsers(){
